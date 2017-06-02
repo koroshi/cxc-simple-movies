@@ -1,8 +1,8 @@
-const moduleA = {
-  // state: { ... },
-  // mutations: { ... },
-  // actions: { ... },
-  // getters: { ... }
-}
+// const moduleA = {
+//   // state: { ... },
+//   // mutations: { ... },
+//   // actions: { ... },
+//   // getters: { ... }
+// }
 
-export default moduleA
+// export default moduleA
