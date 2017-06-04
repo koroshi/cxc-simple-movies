@@ -8,15 +8,45 @@
     </el-button>
     <!-- el-icon-arrow-right -->
   </div>
-  <el-row>
-   <el-col :span="4">
+
+  <div class="rowHeight">
+  <div class="rowWidth">
+  <el-row class="rowWrap">
+ 
+      
+
+   <!-- <el-col :span="5"> -->
    	  <MitemSimpleWithStar> </MitemSimpleWithStar>
-   </el-col>
-   <el-col :span="4">
+   <!-- </el-col> -->
+   <!-- <el-col :span="5"> -->
    	  <MitemSimpleWithStar> </MitemSimpleWithStar>
-   </el-col>
-  	
+   <!-- </el-col> -->
+    <!-- <el-col :span="5">   -->
+      <MitemSimpleWithStar> </MitemSimpleWithStar>
+   <!-- </el-col> -->
+       <!-- <el-col :span="5">   -->
+      <MitemSimpleWithStar> </MitemSimpleWithStar>
+   <!-- </el-col> -->
+       <!-- <el-col :span="5">   -->
+      <MitemSimpleWithStar> </MitemSimpleWithStar>
+      <MitemSimpleWithStar> </MitemSimpleWithStar>
+      <MitemSimpleWithStar> </MitemSimpleWithStar>
+      <MitemSimpleWithStar> </MitemSimpleWithStar>
+
+      <MitemSimpleWithStar> </MitemSimpleWithStar>
+      <MitemSimpleWithStar> </MitemSimpleWithStar>
+
+      <MitemSimpleWithStar> </MitemSimpleWithStar>
+      <!-- <MitemSimpleWithStar> </MitemSimpleWithStar> -->
+
+      <!-- <MitemSimpleWithStar> </MitemSimpleWithStar> -->
+      <!-- <MitemSimpleWithStar> </MitemSimpleWithStar> -->
+   <!-- </el-col> -->
+  	   
   </el-row>
+   </div>
+   </div>
+
 
 
   <!-- <MitemSimpleWithStar> </MitemSimpleWithStar> -->
@@ -47,6 +77,21 @@ export default {
       content: "";
   }
   .clearfix:after {
-      clear: both
+      clear: both;
+
   }
+  .rowWrap{
+    width:3500px;
+    text-align:left;     
+
+  }
+.rowWidth {
+  width: 1000px;
+      overflow-x: auto;
+      height: 350px
+}
+.rowHeight {
+  height: 280px;
+  overflow-y:hidden;
+}
 </style>

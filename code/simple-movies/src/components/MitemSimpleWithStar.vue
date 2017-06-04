@@ -1,8 +1,9 @@
 <template>
+  <div class="mCard">
     <el-card :body-style="{ padding: '0px' }">
       <img src="../assets/logo.png" class="image">
       <div style="padding: 14px;">
-        <span>{{movieName}}</span>
+        <span class="movieName">{{movieName}}</span>
         <!-- <div class="bottom clearfix"> -->
           <!-- <time class="time">{{ currentDate }}</time> -->
           <!-- <el-button type="text" class="button">操作按钮</el-button> -->
@@ -18,6 +19,7 @@
 				  <!-- text-template="{value}"> -->
       </div>
     </el-card>
+    </div>
 </template>
 
 <script>
@@ -42,5 +44,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.mCard {
+  width: 320px;
+  height: 300px;
+  display: inline-block;
+  text-align: center;
+}
+.movieName {
+  font-size: 2rem;
+}
 </style>

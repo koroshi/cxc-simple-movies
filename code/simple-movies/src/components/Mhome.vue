@@ -1,5 +1,9 @@
 <template>
-<Mtype></Mtype>
+<div>
+	<Mtype></Mtype>
+	<Mtype></Mtype>
+</div>
+
 </template>
 
 <script>
