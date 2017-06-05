@@ -1,7 +1,7 @@
 <template>
     <el-row>
       <el-col :span="24">
-        <div>{{mTitle}}</div>
+        <div class="mTitle">{{mTitle}}</div>
       </el-col>
     </el-row>
 </template>
@@ -19,5 +19,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.mTitle{
+  font-size: 20px;
+}
 </style>

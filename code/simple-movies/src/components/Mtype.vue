@@ -1,8 +1,8 @@
 <template>
 <el-card class="box-card">
   <div slot="header" class="clearfix">
-    <span style="line-height: 36px;float:left;">{{mTypeTitle}}</span>
-    <el-button style="float: right;" type="primary">
+    <span style="line-height: 36px;float:left;font-size:18px">{{mTypeTitle}}</span>
+    <el-button style="float: right;font-size:18px" type="primary">
     	更多
     	<i class="el-icon-arrow-right el-icon--right"></i>
     </el-button>
@@ -10,24 +10,17 @@
   </div>
 
   <div class="rowHeight">
-  <div class="rowWidth">
-  <el-row class="rowWrap">
+  <div class="rowWidth" >
+  <el-row   class="rowWrap">
  
-      
-
-   <!-- <el-col :span="5"> -->
-   	  <MitemSimpleWithStar> </MitemSimpleWithStar>
-   <!-- </el-col> -->
-   <!-- <el-col :span="5"> -->
-   	  <MitemSimpleWithStar> </MitemSimpleWithStar>
-   <!-- </el-col> -->
-    <!-- <el-col :span="5">   -->
+       <MitemSimpleWithStar v-for="item in 10" :key="item"> </MitemSimpleWithStar>
+       <!-- <MitemSimpleWithStar> </MitemSimpleWithStar> -->
+       <MitemSimpleMore> </MitemSimpleMore>
+        <!-- <MitemSimpleWithStar v-for="item in 10"> </MitemSimpleWithStar> -->
+   	  
+<!--    	  <MitemSimpleWithStar> </MitemSimpleWithStar>
       <MitemSimpleWithStar> </MitemSimpleWithStar>
-   <!-- </el-col> -->
-       <!-- <el-col :span="5">   -->
       <MitemSimpleWithStar> </MitemSimpleWithStar>
-   <!-- </el-col> -->
-       <!-- <el-col :span="5">   -->
       <MitemSimpleWithStar> </MitemSimpleWithStar>
       <MitemSimpleWithStar> </MitemSimpleWithStar>
       <MitemSimpleWithStar> </MitemSimpleWithStar>
@@ -36,7 +29,7 @@
       <MitemSimpleWithStar> </MitemSimpleWithStar>
       <MitemSimpleWithStar> </MitemSimpleWithStar>
 
-      <MitemSimpleWithStar> </MitemSimpleWithStar>
+      <MitemSimpleWithStar> </MitemSimpleWithStar> -->
       <!-- <MitemSimpleWithStar> </MitemSimpleWithStar> -->
 
       <!-- <MitemSimpleWithStar> </MitemSimpleWithStar> -->
@@ -56,15 +49,18 @@
 
 <script>
 import MitemSimpleWithStar from "./MitemSimpleWithStar"
+import MitemSimpleMore from "./MitemSimpleMore"
 export default {
   name: 'Mtype',
   data () {
     return {
-      mTypeTitle: '影院热映'
+      mTypeTitle: '影院热映',
+      movies:[1,2,3,4,5,6,7,8,9,10]
     }
   },
   components:{
-  	MitemSimpleWithStar
+    MitemSimpleWithStar,
+  	MitemSimpleMore
   }
 }
 </script>
@@ -81,7 +77,7 @@ export default {
 
   }
   .rowWrap{
-    width:3500px;
+    width:3700px;
     text-align:left;     
 
   }
@@ -91,7 +87,7 @@ export default {
       height: 350px
 }
 .rowHeight {
-  height: 280px;
+  height: 300px;
   overflow-y:hidden;
 }
 </style>

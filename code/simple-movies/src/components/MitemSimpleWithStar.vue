@@ -4,18 +4,14 @@
       <img src="../assets/logo.png" class="image">
       <div style="padding: 14px;">
         <span class="movieName">{{movieName}}</span>
-        <!-- <div class="bottom clearfix"> -->
-          <!-- <time class="time">{{ currentDate }}</time> -->
-          <!-- <el-button type="text" class="button">操作按钮</el-button> -->
-        <!-- </div> -->
         <el-rate
           :max="5"
-		  v-model="points"
-		  disabled
-		  show-text
-		  text-color="#ff9900"
-		  :text-template="displayPointes">
-		</el-rate>
+		      v-model="points"
+		      disabled
+		      show-text
+		      text-color="#ff9900"
+		    :text-template="displayPointes">
+		    </el-rate>
 				  <!-- text-template="{value}"> -->
       </div>
     </el-card>
