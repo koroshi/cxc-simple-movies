@@ -1,8 +1,10 @@
 <template>
   <div class="mCard">
-    <el-card :body-style="{ padding: '0px' }">
-      <img src="../assets/logo.png" class="image">
-      <div style="padding: 14px;">
+    <el-card :body-style="{ padding: '0px'}">
+       <div class="imgSize">
+          <img src="../assets/logo.png" >
+       </div>
+      <div class="myfoont">
         <span class="movieName">{{movieName}}</span>
         <el-rate
           :max="5"
@@ -12,10 +14,9 @@
 		      text-color="#ff9900"
 		    :text-template="displayPointes">
 		    </el-rate>
-				  <!-- text-template="{value}"> -->
       </div>
     </el-card>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -40,13 +41,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.imgSize {
+  width: 318px;
+  height: 447px;
+  margin:auto;
+}
 .mCard {
+    margin: 10px 10px; 
   width: 320px;
-  height: 300px;
+  /*height: 300px;*/
   display: inline-block;
   text-align: center;
 }
 .movieName {
   font-size: 2rem;
+}
+.myfoont {
+  padding: 14px;
+   height: 62px;
 }
 </style>

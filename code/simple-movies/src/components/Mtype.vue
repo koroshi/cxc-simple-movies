@@ -77,17 +77,17 @@ export default {
 
   }
   .rowWrap{
-    width:3700px;
+    width:4000px;
     text-align:left;     
 
   }
 .rowWidth {
   width: 1000px;
       overflow-x: auto;
-      height: 350px
+      height: 600px
 }
 .rowHeight {
-  height: 300px;
+  height: 550px;
   overflow-y:hidden;
 }
 </style>

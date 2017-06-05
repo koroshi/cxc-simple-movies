@@ -1,33 +1,26 @@
 <template>
-  <div class="mCardMore">
+  <div class="mCard">
     <el-card :body-style="{ padding: '0px'} ">
-    <div class="myBody">
+      <div class="imgSize">
           <div class="moreContent"> 
-  	    	  <div>全部</div>
-	    	  <hr/>
-	    	  <div>{{allTypes}}部</div>
+            <div>全部</div>
+            <hr/>
+            <div>{{allTypes}}部</div>
           </div>
-
-    </div>
-    <!-- <el-card :body-style="{ padding: '0px', height:'298px', line-height:'298px',background-color:'gray' }"> -->
-  
-<!--     height: 298px;
-    line-height: 298px;
-    background-color: gray; -->
-<!--       <img src="../assets/logo.png" class="image">
-      <div style="padding: 14px;">
+        <!-- <img src="../assets/logo.png" > -->
+      </div>
+      <div class="myfoont"> 
         <span class="movieName">{{movieName}}</span>
-        <el-rate
+         <el-rate  
           :max="5"
-		  v-model="points"
-		  disabled
-		  show-text
-		  text-color="#ff9900"
-		  :text-template="displayPointes">
-		</el-rate>
-      </div> -->
+          disabled
+          show-text
+          text-color="#ff9900"
+        :text-template="displayPointes">
+        </el-rate>
+      </div>
     </el-card>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -52,27 +45,33 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.mCardMore {
+
+.imgSize {
+  width: 318px;
+  height: 447px;
+  margin:auto;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+   background-color: #D3DCE6;
+}
+.mCard {
   width: 320px;
-  height: 300px;
+  /*height: 300px;*/
+     margin: 10px 10px; 
   display: inline-block;
   text-align: center;
 }
-.myBody {
-	height: 298px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	/*margin-top: 134px;*/
-	/*padding-top: 30px;*/
-    /*line-height: 298px;*/
-    background-color: #D3DCE6;
+.movieName {
+  font-size: 2rem;
+}
+.myfoont {
+  visibility: hidden;
+  padding: 14px;
+   height: 62px;
 }
 .moreContent {
-	font-size: 1.5rem;
-	/*height: 20px;*/
+  font-size: 1.5rem;
+  /*height: 20px;*/
 }
-/*.movieName {*/
-  /*font-size: 2rem;*/
-/*}*/
 </style>
