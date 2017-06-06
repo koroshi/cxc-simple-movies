@@ -1,26 +1,29 @@
 <template>
-  <div class="mCard">
-    <el-card :body-style="{ padding: '0px'}">
-       <div class="imgSize">
-          <img src="../assets/logo.png" >
-       </div>
-      <div class="myfoont">
-        <span class="movieName">{{movieName}}</span>
-        <el-rate
-          :max="5"
-		      v-model="points"
-		      disabled
-		      show-text
-		      text-color="#ff9900"
-		    :text-template="displayPointes">
-		    </el-rate>
-      </div>
-    </el-card>
-  </div>
+<router-link :to="{ name: 'movieDetail', params: { movieId: item }}">
+    <div class="mCard">
+      <el-card :body-style="{ padding: '0px'}">
+         <div class="imgSize">
+            <img src="../assets/logo.png" >
+         </div>
+        <div class="myfoont">
+          <span class="movieName">{{movieName}}</span>
+          <el-rate
+            :max="5"
+  		      v-model="points"
+  		      disabled
+  		      show-text
+  		      text-color="#ff9900"
+  		    :text-template="displayPointes">
+  		    </el-rate>
+        </div>
+      </el-card>
+    </div>
+  </router-link>
 </template>
 
 <script>
 export default {
+  props: ['item'],
   name: 'MitemSimpleWithStar',
   data () {
     return {

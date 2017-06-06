@@ -11,6 +11,16 @@ export default new Router({
       path: '/',
       name: 'Mhome',
       component: Mhome
-    }
+    },
+    {
+      path: '/more/:type',
+      name: 'more',
+      component: Hello
+    },
+    {
+      path: '/:movieId',
+      name: 'movieDetail',
+      component: Hello
+    },
   ]
 })

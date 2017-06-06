@@ -1,50 +1,24 @@
 <template>
-<el-card class="box-card">
-  <div slot="header" class="clearfix">
-    <span style="line-height: 36px;float:left;font-size:18px">{{mTypeTitle}}</span>
-    <el-button style="float: right;font-size:18px" type="primary">
-    	更多
-    	<i class="el-icon-arrow-right el-icon--right"></i>
-    </el-button>
-    <!-- el-icon-arrow-right -->
-  </div>
+  <el-card class="box-card">
+    <div slot="header" class="clearfix">
+      <span style="line-height: 36px;float:left;font-size:18px">{{mTypeTitle}}</span>
+      <router-link :to="{ name: 'more', params: { type: 'commingSoon' }}">
+      <el-button style="float: right;font-size:18px" type="primary">
+      	更多
+      	<i class="el-icon-arrow-right el-icon--right"></i>
+      </el-button>
+      </router-link>
+    </div>
 
-  <div class="rowHeight">
-  <div class="rowWidth" >
-  <el-row   class="rowWrap">
- 
-       <MitemSimpleWithStar v-for="item in 10" :key="item"> </MitemSimpleWithStar>
-       <!-- <MitemSimpleWithStar> </MitemSimpleWithStar> -->
-       <MitemSimpleMore> </MitemSimpleMore>
-        <!-- <MitemSimpleWithStar v-for="item in 10"> </MitemSimpleWithStar> -->
-   	  
-<!--    	  <MitemSimpleWithStar> </MitemSimpleWithStar>
-      <MitemSimpleWithStar> </MitemSimpleWithStar>
-      <MitemSimpleWithStar> </MitemSimpleWithStar>
-      <MitemSimpleWithStar> </MitemSimpleWithStar>
-      <MitemSimpleWithStar> </MitemSimpleWithStar>
-      <MitemSimpleWithStar> </MitemSimpleWithStar>
-      <MitemSimpleWithStar> </MitemSimpleWithStar>
-
-      <MitemSimpleWithStar> </MitemSimpleWithStar>
-      <MitemSimpleWithStar> </MitemSimpleWithStar>
-
-      <MitemSimpleWithStar> </MitemSimpleWithStar> -->
-      <!-- <MitemSimpleWithStar> </MitemSimpleWithStar> -->
-
-      <!-- <MitemSimpleWithStar> </MitemSimpleWithStar> -->
-      <!-- <MitemSimpleWithStar> </MitemSimpleWithStar> -->
-   <!-- </el-col> -->
-  	   
-  </el-row>
-   </div>
-   </div>
-
-
-
-  <!-- <MitemSimpleWithStar> </MitemSimpleWithStar> -->
-  <!-- <MitemSimpleWithStar> </MitemSimpleWithStar> -->
-</el-card>
+    <div class="rowHeight">
+      <div class="rowWidth" >
+        <el-row   class="rowWrap">
+          <MitemSimpleWithStar v-for="item in 10" :key="item" :item="item"> </MitemSimpleWithStar>
+          <MitemSimpleMore> </MitemSimpleMore>
+        </el-row>
+      </div>
+    </div>
+  </el-card>
 </template>
 
 <script>
