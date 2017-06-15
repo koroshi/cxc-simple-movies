@@ -1,16 +1,16 @@
 <template>
 	<div>
 		<div>
-			<div class="image">
+			<a class="image">
 				<img src="../assets/logo.png" >
 
-			</div>
+			</a>
 
 			<a>
 				【MMD】结月缘的The ocean【重投】
 			</a>
 		</div>
-		<div style="float:left">456</div>
+		<div>456</div>
 	</div>
 </template>
 <script>
@@ -27,7 +27,8 @@ export default {
 
 <style >
 .image {
-	display: inline;
+	/*display: inline;*/
+	float: left;
 	width: 160px;
     height: 100px;
 }
