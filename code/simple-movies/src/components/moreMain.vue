@@ -1,28 +1,30 @@
 <template>
-    <div>
+    <div class="moreMain">
 		<mt-navbar v-model="selected" :fixed="true" :value="selected" >
 		    <mt-tab-item id="1">正在热映</mt-tab-item>
 		    <mt-tab-item id="2">即将上映</mt-tab-item>
 	    </mt-navbar>	
-	    <mt-tab-container v-model="selected">
-		      <mt-tab-container-item id="1"
-		      v-infinite-scroll="loadMore"
-		      infinite-scroll-disabled="loading"
-		      infinite-scroll-distance="10">
-		        <!-- <mt-cell v-for="n in lists" :key="n" > -->
-		        <div v-for="n in lists" :key="n">
-		         <MitemHorizontalWithStar :key="n" :item="n"> </MitemHorizontalWithStar>
-		        </div>
-		        	        
-		        <!-- </mt-cell> -->
+	    <div class="moreMainBottom">
+		    <mt-tab-container v-model="selected">
+			      <mt-tab-container-item id="1"
+			      v-infinite-scroll="loadMore"
+			      infinite-scroll-disabled="loading"
+			      infinite-scroll-distance="10">
+			        <!-- <mt-cell v-for="n in lists" :key="n" > -->
+			        <div v-for="n in lists" :key="n">
+			         <MitemHorizontalWithStar :key="n" :item="n"> </MitemHorizontalWithStar>
+			        </div>
+			        	        
+			        <!-- </mt-cell> -->
 
-		
-		             <!-- <mt-spinner type="fading-circle" color="#26a2ff"></mt-spinner> -->
-		      </mt-tab-container-item>
-		      <mt-tab-container-item id="2">
-		        <mt-cell v-for="n in 4" :title="'测试 ' + n" :key="n" />
-		      </mt-tab-container-item>
-	    </mt-tab-container>	
+			
+			             <!-- <mt-spinner type="fading-circle" color="#26a2ff"></mt-spinner> -->
+			      </mt-tab-container-item>
+			      <mt-tab-container-item id="2">
+			        <mt-cell v-for="n in 4" :title="'测试 ' + n" :key="n" />
+			      </mt-tab-container-item>
+		    </mt-tab-container>	
+	    </div>
     </div>
 </template>
 
@@ -61,6 +63,12 @@ export default {
 }
 </script>
 
-<style>
+<style >
+.moreMain .mint-tab-item-label {
+	font-size: 70px;
+}
+.moreMainBottom {
+	margin-top: 80px;
+}
 
 </style>

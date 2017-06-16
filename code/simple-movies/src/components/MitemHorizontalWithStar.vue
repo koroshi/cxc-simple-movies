@@ -23,8 +23,19 @@
 			    <!-- The ocean大声道啊爱上 -->
 				
 			</a>
+		<div class="mDiscription">
+			<p>
+				导演：{{director}}
+			</p>
+			<p>
+				主演:{{displayStartings}}
+			</p>
+		     <p>
+				{{hasWatching}}人看过
+			</p>
 		</div>
-		<div class="mDiscription">2017-01-27(英国) / 伊万·麦克格雷格 / 约翰尼·李·米勒 / 罗伯特·卡莱尔 / 艾文·布莱纳 / 雪莉·亨德森 / 安杰拉·奈迪亚科娃 / 史蒂文·罗伯特森 / 戈登·肯尼迪 / 西蒙·韦尔 / 詹姆斯·卡沙莫 / 梁佩诗 / 阿塔·雅谷伯 / 埃文·威尔什 /...</div>
+		</div>
+
 	</div>
 </template>
 <script>
@@ -33,13 +44,19 @@ export default {
 	data () {
 		return {
 			movieName:'神奇女侠',
-			points:4.1
+			points:4.1,
+			director:'导演',
+			Starings:['主演1','主演2'],
+			hasWatching:100
 		}
 	},
 	computed: {
   	  displayPointes:function(){
   		 return (this.points * 2).toString();
-  	}
+  	},
+      displayStartings:function(){
+         return this.Starings.join('/')
+      }
   },
 	
 }
@@ -53,15 +70,23 @@ export default {
 }
 .upPart {
 	margin-top: 10px;
-	height: 150px;
+	height: 350px;
 }
 .mRate {
 	text-align: left;
 	padding-left: 450px;
-	font-size: 3rem;
+	font-size: 5rem;
+}
+.mRate .el-rate__icon {
+	font-size: 37px;
+}
+.mRate .el-rate__text {
+font-size: 33px;
 }
 .mDiscription {
-		text-align: left;
+	font-size: 2rem;
+	margin-top: 50px;
+	text-align: left;
 	padding-left: 450px;
 	text-indent:2em;
 	color: #666666;
