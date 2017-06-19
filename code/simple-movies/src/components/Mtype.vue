@@ -13,8 +13,8 @@
     <div class="rowHeight">
       <div class="rowWidth" >
         <el-row   class="rowWrap">
-          <MitemSimpleWithStar v-for="item in 10" :key="item" :item="item"> </MitemSimpleWithStar>
-          <MitemSimpleMore> </MitemSimpleMore>
+          <MitemSimpleWithStar v-for="item in movies" :key="item" :item="item"> </MitemSimpleWithStar>
+          <MitemSimpleMore :all="movies.length"> </MitemSimpleMore>
         </el-row>
       </div>
     </div>
@@ -24,17 +24,27 @@
 <script>
 import MitemSimpleWithStar from "./MitemSimpleWithStar"
 import MitemSimpleMore from "./MitemSimpleMore"
+import { mapState } from 'vuex'
 export default {
   name: 'Mtype',
   data () {
     return {
-      mTypeTitle: '影院热映',
-      movies:[1,2,3,4,5,6,7,8,9,10]
+      mTypeTitle: '影院热映'
+      // movies:[1,2,3,4,5,6,7,8,9,10]
     }
+  },
+  computed:{
+    ...mapState({
+      movies: 'movies',
+    }) 
   },
   components:{
     MitemSimpleWithStar,
   	MitemSimpleMore
+  },
+  created () {
+    console.log(this.$store)
+    this.$store.dispatch('getAllMovies')
   }
 }
 </script>

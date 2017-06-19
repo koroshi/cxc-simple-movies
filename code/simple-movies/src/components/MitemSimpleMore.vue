@@ -5,6 +5,7 @@
           <div class="moreContent"> 
             <div>全部</div>
             <hr/>
+            <!-- <div>{{all}}部</div> -->
             <div>{{allTypes}}部</div>
           </div>
         <!-- <img src="../assets/logo.png" > -->
@@ -26,16 +27,24 @@
 <script>
 export default {
   name: 'MitemSimpleMore',
+  props: ['all'],
   data () {
     return {
-      movieName: '神奇女侠',
-      allTypes:27
+      movieName: '神奇女侠'
+
     }
   },
   computed: {
   	displayPointes:function(){
   		 return (this.points * 2).toString();
-  	}
+  	},
+    allTypes:function(){
+      console.log('1')
+      console.log(this.$store)
+      console.log(this.$store.state.movies)
+        console.log('2')
+       return this.$store.state.movies.length;
+    },
   },
   components:{
   	// Mtype

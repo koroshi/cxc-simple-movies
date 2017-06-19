@@ -1,9 +1,10 @@
 <template>
-<router-link :to="{ name: 'movieDetail', params: { movieId: item }}">
+<router-link :to="{ name: 'movieDetail', params: { movieId: item.id }}">
     <div class="mCard">
       <el-card :body-style="{ padding: '0px'}">
          <div class="imgSize">
-            <img src="../assets/logo.png" >
+            <!-- <img src="../assets/logo.png" > -->
+            <img :src="item.images.large">
          </div>
         <div class="myfoont">
           <span class="movieName">{{movieName}}</span>
@@ -22,13 +23,14 @@
 </template>
 
 <script>
+// import { mapState } from 'vuex'
 export default {
   props: ['item'],
   name: 'MitemSimpleWithStar',
   data () {
     return {
-      movieName: '神奇女侠',
-      points:4.1
+      movieName: this.item.title,
+      points:this.item.rating.average/2
     }
   },
   computed: {

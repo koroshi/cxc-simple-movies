@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+// import movies from 
+import store from './store/movies'
 
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
@@ -17,6 +19,7 @@ Vue.use(MintUI)
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })
