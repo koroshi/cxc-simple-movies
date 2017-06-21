@@ -1,4 +1,5 @@
 <template>
+  <router-link :to="{ name: 'more', params: { type: mTypeId }}">
   <div class="mCard">
     <el-card :body-style="{ padding: '0px'} ">
       <div class="imgSize">
@@ -6,7 +7,7 @@
             <div>全部</div>
             <hr/>
             <!-- <div>{{all}}部</div> -->
-            <div>{{allTypes}}部</div>
+            <div>{{all}}部</div>
           </div>
         <!-- <img src="../assets/logo.png" > -->
       </div>
@@ -22,12 +23,14 @@
       </div>
     </el-card>
   </div>
+  </router-link>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'MitemSimpleMore',
-  props: ['all'],
+  props: ['all',"mTypeId"],
   data () {
     return {
       movieName: '神奇女侠'
@@ -39,10 +42,10 @@ export default {
   		 return (this.points * 2).toString();
   	},
     allTypes:function(){
-      console.log('1')
-      console.log(this.$store)
-      console.log(this.$store.state.movies)
-        console.log('2')
+      // console.log('1')
+      // console.log(this.$store)
+      // console.log(this.$store.state.movies)
+        // console.log('2')
        return this.$store.state.movies.length;
     },
   },

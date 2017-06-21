@@ -2,7 +2,7 @@
 	<div class="hItem">
 		<div class="upPart">
 			<a class="image">
-				<img src="../assets/logo.png" >
+				<img :src="imageUrl" >
 
 			</a>
 
@@ -41,21 +41,29 @@
 <script>
 export default {
 	name:"MitemHorizontalWithStar",
+	props:['movie'],
 	data () {
 		return {
-			movieName:'神奇女侠',
-			points:4.1,
-			director:'导演',
+			movieName:this.movie.title,
+			points:this.movie.rating.average/2,
+			// director:'导演',
 			Starings:['主演1','主演2'],
 			hasWatching:100
 		}
 	},
 	computed: {
   	  displayPointes:function(){
-  		 return (this.points * 2).toString();
+  		 // return (this.points * 2).toString();
+  		return this.movie.rating.average.toString();
   	},
       displayStartings:function(){
-         return this.Starings.join('/')
+         return this.movie.casts.map((one) => one.name).join('/')
+      },
+      director:function(){
+      	return this.movie.directors.map((one) => one.name).join(',')
+      },
+      imageUrl:function(){
+      	return this.movie.images.large;
       }
   },
 	
@@ -94,8 +102,8 @@ font-size: 33px;
 .image img{
 	/*display: inline;*/
 	float: left;
-	width: 160px;
-    height: 100px;
+	/*width: 300px;*/
+    height: 400px;
 }
 	
 </style>

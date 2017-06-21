@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Mhome from '@/components/Mhome'
 import moreMain from '@/components/moreMain'
+import movieDetail from '@/components/movieDetail'
 
 Vue.use(Router)
 
@@ -19,9 +20,9 @@ export default new Router({
       component: moreMain
     },
     {
-      path: '/:movieId',
+      path: '/movie/:movieId',
       name: 'movieDetail',
-      component: Hello
+      component: movieDetail
     },
   ]
 })

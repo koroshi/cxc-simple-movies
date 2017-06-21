@@ -2,7 +2,7 @@
   <el-card class="box-card">
     <div slot="header" class="clearfix">
       <span style="line-height: 36px;float:left;font-size:18px">{{mTypeTitle}}</span>
-      <router-link :to="{ name: 'more', params: { type: 'commingSoon' }}">
+      <router-link :to="{ name: 'more', params: { type: mTypeId }}">
       <el-button style="float: right;font-size:18px" type="primary">
       	更多
       	<i class="el-icon-arrow-right el-icon--right"></i>
@@ -12,9 +12,10 @@
 
     <div class="rowHeight">
       <div class="rowWidth" >
-        <el-row   class="rowWrap">
+        <el-row   :class="{'rowWrap':aa}">
+        <!-- <el-row   class="rowWrap"> -->
           <MitemSimpleWithStar v-for="item in movies" :key="item" :item="item"> </MitemSimpleWithStar>
-          <MitemSimpleMore :all="movies.length"> </MitemSimpleMore>
+          <MitemSimpleMore :all="movies.length" :mTypeId="mTypeId"> </MitemSimpleMore>
         </el-row>
       </div>
     </div>
@@ -27,25 +28,26 @@ import MitemSimpleMore from "./MitemSimpleMore"
 import { mapState } from 'vuex'
 export default {
   name: 'Mtype',
+   props: ['movies','mTypeTitle','mTypeId'],
   data () {
     return {
-      mTypeTitle: '影院热映'
+      aa: true
       // movies:[1,2,3,4,5,6,7,8,9,10]
     }
   },
   computed:{
-    ...mapState({
-      movies: 'movies',
-    }) 
+    // ...mapState({
+    //   movies: 'movies',
+    // }) 
   },
   components:{
     MitemSimpleWithStar,
   	MitemSimpleMore
-  },
-  created () {
-    console.log(this.$store)
-    this.$store.dispatch('getAllMovies')
   }
+  // created () {
+  //   // console.log(this.$store)
+  //   this.$store.dispatch('getAllMovies')
+  // }
 }
 </script>
 

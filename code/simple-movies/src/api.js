@@ -1,9 +1,9 @@
 /**
  * Mocking client-server processing
  */
-const _movies = [
+const _nowHot = [
   {
-  	"id": 1, 
+  	"id": "1578714", 
   	"rating": {
        "max": 10,
        "average": 8,
@@ -58,11 +58,16 @@ const _movies = [
 	 ],
 	 "images": {
 	   "small": "http://img7.doubanio.com/view/movie_poster_cover/ipst/public/p2460006593.webp",
-	   "large": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p2460006593.webp",
+	   // "large": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p2460006593.webp",
+	   "large": "http://img7.doubanio.com/img/celebrity/large/25843.jpg",
+
 	   "medium": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2460006593.webp"
 	 }
-  },
-  {
+  }
+]
+
+const  _moviesComing = [
+	{
   	"rating": {
            "max": 10,
            "average": 0,
@@ -134,7 +139,10 @@ const _movies = [
 ]
 
 export default {
-  getMovies (cb) {
-    setTimeout(() => cb(_movies), 100)
+  getCommingMovies (cb) {
+    setTimeout(() => cb(_moviesComing), 100)
+  },
+  getNowHot (cb) {
+  	setTimeout(() => cb(_nowHot), 100)
   }
 }

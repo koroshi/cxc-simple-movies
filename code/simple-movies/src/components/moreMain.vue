@@ -1,18 +1,41 @@
 <template>
     <div class="moreMain">
-		<mt-navbar v-model="selected" :fixed="true" :value="selected" >
-		    <mt-tab-item id="1">正在热映</mt-tab-item>
-		    <mt-tab-item id="2">即将上映</mt-tab-item>
+<!--      <router-link :to="{ name: 'more', params: { type: 'commingSoon' }}">
+     返回
+     </router-link> -->
+		<mt-navbar v-model="type" :fixed="true" :value="type" >
+            <mt-tab-item id="3">
+         <router-link :to="{ name: 'Mhome'}">
+
+     返回
+     <!-- type -->
+  </router-link>
+        </mt-tab-item>
+		    <mt-tab-item id="hot">
+        <router-link :to="{ name: 'more', params: { type: 'hot' }}">
+          正在热映
+          </router-link>
+          </mt-tab-item>
+        <mt-tab-item id="comingSoon">
+        
+       <router-link :to="{ name: 'more', params: { type: 'comingSoon' }}">
+          即将上映
+          </router-link>
+        </mt-tab-item>
+                  
+
+  
+           
 	    </mt-navbar>	
 	    <div class="moreMainBottom">
-		    <mt-tab-container v-model="selected">
-			      <mt-tab-container-item id="1"
+		    <mt-tab-container v-model="type">
+			      <mt-tab-container-item :id="'hot'"
 			      v-infinite-scroll="loadMore"
 			      infinite-scroll-disabled="loading"
 			      infinite-scroll-distance="10">
 			        <!-- <mt-cell v-for="n in lists" :key="n" > -->
-			        <div v-for="n in lists" :key="n">
-			         <MitemHorizontalWithStar :key="n" :item="n"> </MitemHorizontalWithStar>
+			        <div v-for="n in hotMovies" :key="n">
+			         <MitemHorizontalWithStar :key="n" :movie="n"> </MitemHorizontalWithStar>
 			        </div>
 			        	        
 			        <!-- </mt-cell> -->
@@ -20,8 +43,14 @@
 			
 			             <!-- <mt-spinner type="fading-circle" color="#26a2ff"></mt-spinner> -->
 			      </mt-tab-container-item>
-			      <mt-tab-container-item id="2">
-			        <mt-cell v-for="n in 4" :title="'测试 ' + n" :key="n" />
+			      <mt-tab-container-item id="comingSoon"
+            v-infinite-scroll="loadMore"
+            infinite-scroll-disabled="loading"
+            infinite-scroll-distance="10">
+                          <div v-for="n in commingMovies" :key="n">
+               <MitemHorizontalWithStar :key="n" :movie="n"> </MitemHorizontalWithStar>
+              </div>
+			        <!-- <mt-cell v-for="n in commingMovies" :title="'测试 ' + n" :key="n" /> -->
 			      </mt-tab-container-item>
 		    </mt-tab-container>	
 	    </div>
@@ -29,19 +58,33 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import MitemHorizontalWithStar from "./MitemHorizontalWithStar"
 export default {
   name: 'moreMain',
+    // props: ["type"],
   data(){
   	return {
       msg: 'Welcome to Your Vue.js App',
-      selected:'1',
+      // selected:'hot',
       loading:false,
       lists:[1,2,3,4,5,6,7,8,9,10,11]
   	}
   },
   components:{
     MitemHorizontalWithStar
+  },
+  computed:{
+    ...mapState({
+      movies: 'movies',
+      commingMovies: 'commingMovies',
+      hotMovies: 'hotMovies',
+    }) ,
+    type:function(){
+       return this.$route.params.type;
+    }
+    // type: (()=> this.$route.params.type)
+    // type:this.$route.params.type
   },
   methods:{
     loadMore() {

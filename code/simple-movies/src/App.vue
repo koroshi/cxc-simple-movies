@@ -11,6 +11,10 @@ export default {
   name: 'app',
   components:{
     Mheader
+  },
+    created () {
+    // console.log(this.$store)
+    this.$store.dispatch('getAllMovies')
   }
 }
 </script>
